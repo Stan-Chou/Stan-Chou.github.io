@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="分块," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Stan Chou &#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="有一个长度 $n$ 的数列 $a \, (\forall a_i&amp;gt;0)$, 如果在数列上的位置 $i$ 跳一下可以向右跳至位置 $i+a[i]$.有 $m$ 个操作 , 操作有:  给定启始位置 $s$ ,求跳多少次跳出数列. 修改 $a[i]$.  $n \leq 200000 ,m \leq 100000$ Solution我们直觉的思路就是对跳的过程进行压缩. 这里的做法是分块进行压缩">
+<meta name="keywords" content="分块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HNOI2010-Bounce">
+<meta property="og:url" content="http://yoursite.com/2018/02/07/HNOI2010-Bounce/index.html">
 <meta property="og:site_name" content="Stan Chou &#39;s Blog">
+<meta property="og:description" content="有一个长度 $n$ 的数列 $a \, (\forall a_i&amp;gt;0)$, 如果在数列上的位置 $i$ 跳一下可以向右跳至位置 $i+a[i]$.有 $m$ 个操作 , 操作有:  给定启始位置 $s$ ,求跳多少次跳出数列. 修改 $a[i]$.  $n \leq 200000 ,m \leq 100000$ Solution我们直觉的思路就是对跳的过程进行压缩. 这里的做法是分块进行压缩">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-07T09:03:24.059Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Stan Chou &#39;s Blog">
+<meta name="twitter:title" content="HNOI2010-Bounce">
+<meta name="twitter:description" content="有一个长度 $n$ 的数列 $a \, (\forall a_i&amp;gt;0)$, 如果在数列上的位置 $i$ 跳一下可以向右跳至位置 $i+a[i]$.有 $m$ 个操作 , 操作有:  给定启始位置 $s$ ,求跳多少次跳出数列. 修改 $a[i]$.  $n \leq 200000 ,m \leq 100000$ Solution我们直觉的思路就是对跳的过程进行压缩. 这里的做法是分块进行压缩">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/07/HNOI2010-Bounce/"/>
 
 
 
 
 
-  <title>Stan Chou 's Blog</title>
+  <title>HNOI2010-Bounce | Stan Chou 's Blog</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -276,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/07/HNOI2010-Bounce/" itemprop="url">HNOI2010-Bounce</a></h1>
+          <h1 class="post-title" itemprop="name headline">HNOI2010-Bounce</h1>
         
 
         <div class="post-meta">
@@ -350,9 +352,7 @@
       
 
       
-        
-          
-            <p>有一个长度 $n$ 的数列 $a \, (\forall a_i&gt;0)$, 如果在数列上的位置 $i$ 跳一下可以向右跳至位置 $i+a[i]$.<br>有 $m$ 个操作 , 操作有:</p>
+        <p>有一个长度 $n$ 的数列 $a \, (\forall a_i&gt;0)$, 如果在数列上的位置 $i$ 跳一下可以向右跳至位置 $i+a[i]$.<br>有 $m$ 个操作 , 操作有:</p>
 <ul>
 <li>给定启始位置 $s$ ,求跳多少次跳出数列.</li>
 <li>修改 $a[i]$.</li>
@@ -364,8 +364,6 @@
 <p>因此查询一块一块跳,是 $O(\sqrt{n})$ 的,修改只要修改块内的点,也是 $O(\sqrt{n})$ .</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">210000</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,bl;</span><br><span class="line"><span class="keyword">int</span> a[maxn],bt[maxn],ba[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X=<span class="number">0</span>,w=<span class="number">0</span>; <span class="keyword">char</span> ch=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) &#123;w|=ch==<span class="string">'-'</span>;ch=getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) X=(X&lt;&lt;<span class="number">3</span>)+(X&lt;&lt;<span class="number">1</span>)+(ch^<span class="number">48</span>),ch=getchar();</span><br><span class="line">    <span class="keyword">return</span> w?-X:X;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pretre</span><span class="params">(<span class="keyword">int</span> l , <span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = r; i &gt;= l; i--)</span><br><span class="line">	<span class="keyword">if</span> (a[i]+i &gt; r)</span><br><span class="line">	    bt[i] = <span class="number">1</span> , ba[i] = a[i]+i;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	    bt[i] = bt[a[i]+i]+<span class="number">1</span> , ba[i] = ba[a[i]+i];</span><br><span class="line">	    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (s &lt;= n)&#123;</span><br><span class="line">		cnt += bt[s];</span><br><span class="line">		s = ba[s];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	n = read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = read();</span><br><span class="line">	bl = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= bl; i++)</span><br><span class="line">	pretre((i<span class="number">-1</span>)*bl+<span class="number">1</span>,i*bl);</span><br><span class="line">	<span class="keyword">if</span> (bl*bl != n) pretre(bl*bl+<span class="number">1</span>,n);</span><br><span class="line">	m = read();</span><br><span class="line">	<span class="keyword">while</span> (m--)&#123;</span><br><span class="line">		<span class="keyword">int</span> t , s , c;</span><br><span class="line">		t = read();</span><br><span class="line">		s = read();</span><br><span class="line">		s = s + <span class="number">1</span>; <span class="comment">// to cater for the fact that it start at 0</span></span><br><span class="line">		<span class="keyword">if</span> (t == <span class="number">1</span>)&#123;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;query(s)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (t == <span class="number">2</span>)&#123;</span><br><span class="line">			c = read();</span><br><span class="line">			a[s] = c;</span><br><span class="line">			<span class="keyword">int</span> bn = (s<span class="number">-1</span>)/bl + <span class="number">1</span>; <span class="comment">// block number</span></span><br><span class="line">			pretre((bn<span class="number">-1</span>)*bl+<span class="number">1</span>,min(bn*bl,n));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -380,309 +378,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/Announce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Stan Chou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Stan Chou 's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/07/Announce/" itemprop="url">建站公告</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T16:00:00+08:00">
-                2018-02-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Miscllaneous/" itemprop="url" rel="index">
-                    <span itemprop="name">Miscllaneous</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/分块/" rel="tag"># 分块</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先这个Blog大致是服务于OI以及技术性相关内容的.</p>
-<p>这是因为对于我自己,关于计算机的东西倾向于在计算机上记录,而其它的东西倾向于在纸质的载体上记录.</p>
-<p>我一般发布OI相关文章的规则是:</p>
-<p>对于每一道题目,都会单独发一篇文章,tag中是该题目的类别.</p>
-<p>而对于一些总结的文章,则倾向于在一些题目文章之后发.</p>
-<p>这是由我自己的一些时间浪费的现象所决定的.</p>
-<p>总之,在看其他人题解的时候也要牢记,一定要一次全部看懂,然后才能自己写题解.</p>
-<p>Stan Chou</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/Hello-World/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Stan Chou">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Stan Chou 's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/07/Hello-World/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T12:00:00+08:00">
-                2018-02-07
-              </time>
+              <a href="/2018/02/07/Announce/" rel="next" title="建站公告">
+                <i class="fa fa-chevron-left"></i> 建站公告
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Miscllaneous/" itemprop="url" rel="index">
-                    <span itemprop="name">Miscllaneous</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>抽象意义上这已经是第三次建站了.</p>
-<p>这次Blog在主机端上搭在了Linux上.</p>
-<p>已经成功支持了 $\LaTeX$ .</p>
-<p>Hello World!</p>
-<p>Stan Chou</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -692,10 +417,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -703,6 +429,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -723,8 +453,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -788,6 +527,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -928,6 +683,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
